@@ -1,0 +1,52 @@
+# $Id$
+TARGETNAME=pcre_driver
+TARGETPATH=obj
+#kernel-mode DRIVER
+TARGETTYPE=DRIVER
+#kernel-mode LIB
+#TARGETTYPE=DRIVER_LIBRARY
+#kernel-mode DLL
+#TARGETTYPE=EXPORT_DRIVER
+#TARGETTYPE=DYNLINK
+
+#USE_MSVCRT=1
+#USE_LIBCMT=1
+#USE_LIBCNTPR=1
+
+# Create browse info
+#BROWSER_INFO=1
+#BROWSERFILE=<some path>
+
+# Additional defines for the C/C++ preprocessor
+#C_DEFINES=$(C_DEFINES)
+
+C_DEFINES=/DPCRE_STATIC
+C_DEFINES=/DHAVE_CONFIG_H
+
+#error LNK2019: unresolved external symbol __chkstk referenced in function
+#TARGETLIBS=$(DDK_LIB_PATH)\ntstrsafe.lib
+#TARGETLIBS=$(DDK_LIB_PATH)\oldnames.lib
+TARGETLIBS=$(DDK_LIB_PATH)\libcntpr.lib
+
+
+SOURCES=\
+  pcre_byte_order.c \
+  pcre_compile.c \
+  pcre_config.c \
+  pcre_dfa_exec.c \
+  pcre_exec.c \
+  pcre_fullinfo.c \
+  pcre_get.c \
+  pcre_globals.c \
+  pcre_newline.c \
+  pcre_ord2utf8.c \
+  pcre_refcount.c \
+  pcre_string_utils.c \
+  pcre_study.c \
+  pcre_tables.c \
+  pcre_ucd.c \
+  pcre_valid_utf8.c \
+  pcre_version.c \
+  pcre_xclass.c \
+  pcre_chartables.c \
+  sample.c

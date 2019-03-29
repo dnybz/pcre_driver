@@ -1,0 +1,10 @@
+;
+; DEF file for sample kernel-mode DLL.
+;
+
+NAME SAMPLE.SYS
+
+EXPORTS
+	pcre_compile
+	pcre_exec
+	pcre_free
